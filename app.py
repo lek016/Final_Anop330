@@ -2,7 +2,9 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("XGmodel_0.2.pkl")
+loaded = joblib.load("XGmodel_0.2.pkl")
+model = loaded["model"]
+Threshold = loaded["threshold"]
 
 st.set_page_config(page_title="🎉 Reunion Prediction App", layout="centered")
 
