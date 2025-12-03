@@ -38,10 +38,10 @@ input_data = pd.DataFrame([[
 
 # Predict
 if st.button("🎉 Predict"):
-    pred = model.predict(input_data)
     prob = model.predict_proba(input_data)[0][1]
-    
-    if pred[0] == 1:
+    pred = 1 if prob > Threshold else 0
+
+    if pred == 1:
         st.success(f"✅ Yes! Likely to accept your invitation ({prob*100:.1f}% confidence)")
     else:
         st.error(f"❌ No. Unlikely to accept your invitation ({(1-prob)*100:.1f}% confidence)")
