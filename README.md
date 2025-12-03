@@ -1,6 +1,6 @@
 # Invitation Acceptance Prediction Streamlit App
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://predictingreunioninvitationacceptances-gffvehuhujoddu4dk4b7qt.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://finalanop330-yphcwnzf9orpqjqjcalbcv.streamlit.app/)
 
 ---
 
