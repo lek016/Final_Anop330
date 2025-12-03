@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("XGmodel_top5.pkl")
+model = joblib.load("XGmodel_0.2.pkl")
 
 st.set_page_config(page_title="🎉 Reunion Prediction App", layout="centered")
 
