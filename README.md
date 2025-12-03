@@ -15,5 +15,5 @@ It uses a custom probability threshold (0.2) for classification.
 ```bash
 pip install -r requirements.txt
 
-## 2. Run the app
-streamlit run app.py
+
+
