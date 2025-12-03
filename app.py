@@ -11,7 +11,7 @@ st.set_page_config(page_title="🎉 Reunion Prediction App", layout="centered")
 st.image("Bucknell.jpeg", use_column_width=True)
 
 # Title
-st.title("XGBoost Prediction App")
+st.title("Reuinion Invitation Acceptance Prediction App")
 st.markdown("Predict whether someone will accept your invitation to the reunion using our top 5  features!")
 
 # Graduation year as slider
@@ -21,9 +21,9 @@ reunion_years_out = current_year - grad_year
 
 peer = st.selectbox("Did a friend refer you? 🫂", ["Yes", "No"])
 
-volunteer = st.selectbox("Did you volunteer during your time at Bucknell ❤️", ["Yes", "No"])
+volunteer = st.selectbox("Do you volunteer in the Bucknell comminity? ❤️", ["Yes", "No"])
 
-greek = st.selectbox("Were you in Greek life 🏠", ["Yes", "No"])
+greek = st.selectbox("Were you in Greek life? 🏠", ["Yes", "No"])
 
 engineering_bachelor = st.selectbox("Did you obtain a Bachelor's Degree in Engineering? 📏", ["Yes", "No"])
 
