@@ -1,25 +1,15 @@
-import streamlit as st
-import joblib
-import pandas as pd
+st.markdown("Predict your invitation using our top 5 features!")
 
-# Load model + threshold
-loaded = joblib.load("XGmodel_0.2.pkl")
-model = loaded["model"]
-Threshold = loaded["threshold"]
-
-st.set_page_config(page_title="🎉 Reunion Prediction App", layout="centered")
-
-st.image("Bucknell.jpeg", use_column_width=True)
-
-st.title("Reunion Invitation Acceptance Prediction App")
-st.markdown("Predict whether someone will accept your invitation using our top 5 features!")
-
-reunion_years_out = st.number_input(
-    "How many years out from graduation are they? 🎓",
-    min_value=0,
-    max_value=80,
-    value=5
+# Graduation year slider
+grad_year = st.slider(
+    "What year did they graduate? 🎓",
+    min_value=1950,
+    max_value=2025,
+    value=2019
 )
+
+current_year = 2025  # or use datetime.datetime.now().year
+reunion_years_out = current_year - grad_year  # compute years out
 
 peer = st.selectbox("Did a friend refer you? 🫂", ["Yes", "No"])
 volunteer = st.selectbox("Do you volunteer in the Bucknell community? ❤️", ["Yes", "No"])
