@@ -12,29 +12,26 @@ st.image("Bucknell.jpeg", use_column_width=True)
 
 # Title
 st.title("Reunion Invitation Acceptance Prediction App")
-st.markdown("Predict whether someone will accept your invitation to the reunion using our top 5  features!")
+st.markdown("Predict whether someone will accept your invitation to the reunion using our top 5 features!")
 
 # Graduation year as slider
 grad_year = st.slider("What year did you graduate? 🎓", min_value=1950, max_value=2025, value=2019)
-current_year = 2025 
+current_year = 2025
 reunion_years_out = current_year - grad_year
 
 peer = st.selectbox("Did a friend refer you? 🫂", ["Yes", "No"])
-
-volunteer = st.selectbox("Do you volunteer in the Bucknell comminity? ❤️", ["Yes", "No"])
-
+volunteer = st.selectbox("Do you volunteer in the Bucknell community? ❤️", ["Yes", "No"])
 greek = st.selectbox("Were you in Greek life? 🏠", ["Yes", "No"])
-
 engineering_bachelor = st.selectbox("Did you obtain a Bachelor's Degree in Engineering? 📏", ["Yes", "No"])
 
-# Convert inputs to model format
-input_data = pd.DataFrame([[
-    reunion_years_out,
-    1 if peer=="Yes" else 0,
-    1 if volunteer=="Yes" else 0,
-    1 if greek=="Yes" else 0,
-    1 if engineering_bachelor=="Yes" else 0
-]], columns=['Reunion_Years_Out','Peer','Volunteer','Greek?','Engineering_Bachelor'])
+# FIXED: Convert inputs to model format using BOOLEANS (not integers)
+input_data = pd.DataFrame([{
+    'Reunion_Years_Out': int(reunion_years_out),
+    'Peer': True if peer == "Yes" else False,
+    'Volunteer': True if volunteer == "Yes" else False,
+    'Greek?': True if greek == "Yes" else False,
+    'Engineering_Bachelor': True if engineering_bachelor == "Yes" else False
+}])
 
 # Predict
 if st.button("🎉 Predict"):
