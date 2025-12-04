@@ -15,19 +15,23 @@ st.image("Bucknell.jpeg", use_column_width=True)
 st.title("Reunion Invitation Acceptance Prediction App")
 st.markdown("Predict your invitation using our top 5 features!")
 
-# Years out from graduation
-reunion_years_out = st.number_input(
-    "How many years out from graduation are they? 🎓",
-    min_value=0,
-    max_value=80,
-    value=5
+# Graduation year slider
+grad_year = st.slider(
+    "What year did they graduate? 🎓",
+    min_value=1950,
+    max_value=2025,
+    value=2019
 )
 
-#Features
+# Calculate years out
+current_year = 2025  # or use datetime.datetime.now().year
+reunion_years_out = current_year - grad_year
+
+# Features
 peer = st.selectbox("Did a friend refer you? 🫂", ["Yes", "No"])
 volunteer = st.selectbox("Do you volunteer in the Bucknell community? ❤️", ["Yes", "No"])
-greek = st.selectbox("Were you in Greek life? 🏠", ["Yes", "No"])
-engineering_bachelor = st.selectbox("Did you obtain a Bachelor's Degree in Engineering? 📏", ["Yes", "No"])
+greek = st.selectbox("Were they in Greek life? 🏠", ["Yes", "No"])
+engineering_bachelor = st.selectbox("Did they obtain a Bachelor's Degree in Engineering? 📏", ["Yes", "No"])
 
 # Create input dataframe with EXACT column names
 input_data = pd.DataFrame([{
