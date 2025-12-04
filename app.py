@@ -11,7 +11,7 @@ st.set_page_config(page_title="🎉 Reunion Prediction App", layout="centered")
 st.image("Bucknell.jpeg", use_column_width=True)
 
 # Title
-st.title("Reuinion Invitation Acceptance Prediction App")
+st.title("Reunion Invitation Acceptance Prediction App")
 st.markdown("Predict whether someone will accept your invitation to the reunion using our top 5  features!")
 
 # Graduation year as slider
